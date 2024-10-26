@@ -4,33 +4,28 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Set;
-
 @Entity
-public class Cliente {
+public class Reservas {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Getter
     @Setter
-    private int idcliente;
+    private int idRes;
     @Getter
     @Setter
-    private String nomcli;
+    private int NroRes;
     @Getter
     @Setter
-    private String dnicli;
+    private String metodopago;
+    @ManyToOne
+    @JoinColumn (name="idcliente", nullable = false)
     @Getter
     @Setter
-    private String telefono;
+    private Cliente cliente;
+    @ManyToOne
+    @JoinColumn (name="idbus", nullable = false)
     @Getter
     @Setter
-    private int edad;
-    @Getter
-    @Setter
-    private String DirCli;
+    private Bus bus;
 
-    @OneToMany(mappedBy = "Cliente")
-    @Getter
-    @Setter
-    private Set<Reservas> reservas;
 }

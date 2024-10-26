@@ -7,29 +7,32 @@ import lombok.Setter;
 import java.util.Set;
 
 @Entity
-public class Cliente {
+public class Bus {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Getter
     @Setter
-    private int idcliente;
+    private int idbus;
     @Getter
     @Setter
-    private String nomcli;
+    private String empresa;
     @Getter
     @Setter
-    private String dnicli;
+    private int calificacion;
     @Getter
     @Setter
-    private String telefono;
+    private String Destino;
     @Getter
     @Setter
-    private int edad;
+    private String Inicio;
     @Getter
     @Setter
-    private String DirCli;
+    private String fecviaje;
+    @Getter
+    @Setter
+    private double Precio;
 
-    @OneToMany(mappedBy = "Cliente")
+    @OneToMany(mappedBy = "Bus")
     @Getter
     @Setter
     private Set<Reservas> reservas;
