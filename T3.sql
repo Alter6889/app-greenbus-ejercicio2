@@ -10,7 +10,7 @@ fecviaje VARCHAR (8),
 Precio double,
 NroDisponible int,
 )
-CREATE TABLE clientes(
+CREATE TABLE Cliente(
 idcliente int PRIMARY KEY,
 nomcli VARCHAR (50),
 dnicli VARCHAR (8),
@@ -22,7 +22,7 @@ Create Table Reserva(
 idRes int PRIMARY KEY,
 NroRes int,
 metodopago VARCHAR (25),
-idcliente int FOREIGN KEY REFERENCES clientes(idcliente),
+idcliente int FOREIGN KEY REFERENCES Cliente(idcliente),
 nomcli VARCHAR(50),
 dnicli VARCHAR(8),
 idbus int FOREIGN KEY REFERENCES bus(idbus),
